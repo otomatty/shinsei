@@ -5,6 +5,7 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "types": ["node"],
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -13,6 +14,37 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+
+    /* Path aliases */
+    "baseUrl": ".",
+    "paths": {
+      "@lichtblick/theme": ["./lichtblick/packages/theme/src"],
+      "@lichtblick/theme/*": ["./lichtblick/packages/theme/src/*"],
+      "@lichtblick/log": ["./lichtblick/packages/log/src"],
+      "@lichtblick/log/*": ["./lichtblick/packages/log/src/*"],
+      "@lichtblick/hooks": ["./lichtblick/packages/hooks/src"],
+      "@lichtblick/hooks/*": ["./lichtblick/packages/hooks/src/*"],
+      "@lichtblick/suite-base": ["./lichtblick/packages/suite-base/src"],
+      "@lichtblick/suite-base/*": ["./lichtblick/packages/suite-base/src/*"],
+      "@lichtblick/message-path": ["./lichtblick/packages/message-path/src"],
+      "@lichtblick/message-path/*": [
+        "./lichtblick/packages/message-path/src/*"
+      ],
+      "@lichtblick/den": ["./lichtblick/packages/den/src"],
+      "@lichtblick/den/*": ["./lichtblick/packages/den/src/*"],
+      "@lichtblick/mcap-support": ["./lichtblick/packages/mcap-support/src"],
+      "@lichtblick/mcap-support/*": [
+        "./lichtblick/packages/mcap-support/src/*"
+      ],
+      "@lichtblick/suite": ["./lichtblick/packages/suite/src"],
+      "@lichtblick/suite/*": ["./lichtblick/packages/suite/src/*"],
+      "@lichtblick/comlink-transfer-handlers": [
+        "./lichtblick/packages/comlink-transfer-handlers/src"
+      ],
+      "@lichtblick/comlink-transfer-handlers/*": [
+        "./lichtblick/packages/comlink-transfer-handlers/src/*"
+      ]
+    },
 
     /* Linting */
     "strict": true,
