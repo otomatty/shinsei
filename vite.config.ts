@@ -45,12 +45,13 @@ export default defineConfig(() => ({
       stream: "readable-stream",
       zlib: "browserify-zlib",
       vm: "vm-browserify",
+      buffer: "buffer/",
     },
   },
 
   define: {
     // Define process.env for browser compatibility
-    "process.env": {},
+    "process.env": "import.meta.env",
     global: "globalThis",
   },
 
@@ -61,6 +62,12 @@ export default defineConfig(() => ({
       "@mui/material",
       "@emotion/react",
       "@emotion/styled",
+      "path-browserify",
+      "crypto-browserify",
+      "readable-stream",
+      "browserify-zlib",
+      "vm-browserify",
+      "buffer",
     ],
     esbuildOptions: {
       define: {
