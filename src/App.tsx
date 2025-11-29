@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { invoke } from "@tauri-apps/api/core";
-import { ThemeProvider, createTheme, CssBaseline } from "@mui/material";
+import { ThemeProvider, CssBaseline } from "@mui/material";
 import {
   Box,
   Button,
@@ -10,25 +10,11 @@ import {
   Paper,
 } from "@mui/material";
 
-// Lichtblick風のダークテーマ
-const darkTheme = createTheme({
-  palette: {
-    mode: "dark",
-    primary: {
-      main: "#9480ed",
-    },
-    secondary: {
-      main: "#f50057",
-    },
-    background: {
-      default: "#121217",
-      paper: "#1a1a24",
-    },
-  },
-  typography: {
-    fontFamily: '"Inter", "Roboto", "Helvetica", "Arial", sans-serif',
-  },
-});
+// Lichtblickのテーマを使用
+import { createMuiTheme } from "@lichtblick/theme";
+
+// Lichtblickのダークテーマを作成
+const darkTheme = createMuiTheme("dark");
 
 function App() {
   const [greetMsg, setGreetMsg] = useState("");
