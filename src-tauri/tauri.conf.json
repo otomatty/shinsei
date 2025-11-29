@@ -4,18 +4,18 @@
   "version": "0.1.0",
   "identifier": "com.sugaiakimasa.shinsei",
   "build": {
-    "beforeDevCommand": "trunk serve",
+    "beforeDevCommand": "bun run dev",
     "devUrl": "http://localhost:1420",
-    "beforeBuildCommand": "trunk build",
+    "beforeBuildCommand": "bun run build",
     "frontendDist": "../dist"
   },
   "app": {
     "withGlobalTauri": true,
     "windows": [
       {
-        "title": "shinsei",
-        "width": 800,
-        "height": 600
+        "title": "Shinsei - Lichtblick Tauri",
+        "width": 1400,
+        "height": 900
       }
     ],
     "security": {
