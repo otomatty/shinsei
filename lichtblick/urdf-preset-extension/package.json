@@ -1,0 +1,48 @@
+{
+  "name": "urdf-preset-extension",
+  "displayName": "URDF Preset Extension",
+  "description": "Automatically provides preset URDF models to SORA 3D panel via MessageConverter without UI changes",
+  "publisher": "SORA Development Team",
+  "homepage": "https://github.com/lichtblick/urdf-preset-extension",
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "./dist/extension.js",
+  "keywords": [
+    "lichtblick",
+    "extension",
+    "urdf",
+    "robotics",
+    "3d",
+    "visualization",
+    "messageconverter",
+    "preset",
+    "robot-models"
+  ],
+  "scripts": {
+    "build": "lichtblick-extension build",
+    "lichtblick:prepublish": "lichtblick-extension build --mode production",
+    "lint": "eslint .",
+    "lint:ci": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "local-install": "lichtblick-extension install",
+    "package": "lichtblick-extension package",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "devDependencies": {
+    "@lichtblick/eslint-plugin": "1.0.4",
+    "@lichtblick/suite": "1.20.0",
+    "@types/jest": "^30.0.0",
+    "@types/react": "18.3.26",
+    "@types/react-dom": "18.3.7",
+    "create-lichtblick-extension": "1.0.0",
+    "eslint": "8.57.1",
+    "jest": "^30.2.0",
+    "prettier": "3.6.2",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "ts-jest": "^29.4.5",
+    "typescript": "5.9.3"
+  }
+}

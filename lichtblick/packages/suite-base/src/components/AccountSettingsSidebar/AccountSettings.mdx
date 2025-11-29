@@ -1,0 +1,178 @@
+# AccountSettings
+
+アカウント設定サイドバーのメインコンポーネント
+
+## 概要
+
+`AccountSettings`は、アカウント設定サイドバーのメインコンポーネントです。ユーザーのログイン状態に基づいて適切なコンポーネントを表示し、統一されたサイドバーレイアウトを提供します。
+
+## 主な機能
+
+### ✅ 条件分岐表示
+- ログイン済み：`AccountInfo`コンポーネント
+- 未ログイン：`SigninForm`コンポーネント
+
+### ✅ レイアウト管理
+- `SidebarContent`による統一されたサイドバーレイアウト
+- タイトル「Account」の表示
+
+### ✅ パフォーマンス最適化
+- `useMemo`による条件分岐結果のメモ化
+- 不要な再レンダリングの防止
+
+## Props
+
+このコンポーネントはPropsを受け取りません。
+
+## 使用例
+
+```tsx
+import AccountSettings from './AccountSettings';
+
+function Sidebar() {
+  return (
+    <div>
+      <AccountSettings />
+    </div>
+  );
+}
+```
+
+## UI構成
+
+### ログイン済みの場合
+```
+┌─────────────────────────────────┐
+│ Account                         │
+├─────────────────────────────────┤
+│ ┌─────┐ user@example.com       │
+│ │ 👤  │ Organization Name       │
+│ └─────┘                        │
+│                                │
+│ [Account settings]             │
+│                                │
+│ [Sign out]                     │
+└─────────────────────────────────┘
+```
+
+### 未ログインの場合
+```
+┌─────────────────────────────────┐
+│ Account                         │
+├─────────────────────────────────┤
+│          🌐                    │
+│                                │
+│ Create a Foxglove account to:   │
+│ • Sync your layouts            │
+│ • Share your layouts           │
+│ • Manage robotics data         │
+│                                │
+│ [Sign in]                      │
+└─────────────────────────────────┘
+```
+
+## 状態管理
+
+### ログイン状態の判定
+```typescript
+const content = useMemo(() => {
+  if (!currentUser) {
+    return <SigninForm />;
+  }
+  return <AccountInfo currentUser={currentUser} />;
+}, [currentUser]);
+```
+
+- `currentUser`の存在有無で表示コンポーネントを決定
+- `useMemo`によるレンダリング最適化
+
+## 依存関係
+
+### Context
+- `useCurrentUser`: ユーザー情報の取得
+
+### コンポーネント
+- `SidebarContent`: サイドバーレイアウト
+- `AccountInfo`: ログイン済みユーザー情報表示
+- `SigninForm`: 未ログインユーザー向けサインインフォーム
+
+## アーキテクチャ
+
+```
+AccountSettings
+├── useCurrentUser (Context)
+├── useMemo (Performance)
+└── SidebarContent
+    ├── AccountInfo (if logged in)
+    └── SigninForm (if not logged in)
+```
+
+## パフォーマンス
+
+### メモ化による最適化
+- `useMemo`で条件分岐結果をキャッシュ
+- `currentUser`の変更時のみ再計算
+- 不要な子コンポーネントの再レンダリング防止
+
+### 条件分岐の効率化
+- 単一の条件分岐による明確な制御フロー
+- 早期リターンによる処理の最適化
+
+## レイアウトシステム
+
+### SidebarContent統合
+- 統一されたサイドバーレイアウト
+- 一貫したタイトル表示
+- スクロール可能なコンテンツエリア
+
+### レスポンシブ対応
+- サイドバーの幅に応じた適切な表示
+- モバイルデバイスでの最適化
+
+## テスト戦略
+
+### 単体テスト
+- ログイン状態による表示切り替えのテスト
+- `useMemo`の動作確認
+- 各子コンポーネントの正しい表示
+
+### 統合テスト
+- `CurrentUserContext`との連携テスト
+- サイドバーレイアウトの表示確認
+
+## 関連コンポーネント
+
+### 子コンポーネント
+- `AccountInfo`: ログイン済みユーザー情報
+- `SigninForm`: サインインフォーム
+
+### 親コンポーネント
+- アプリケーションのサイドバーシステム
+
+### レイアウトコンポーネント
+- `SidebarContent`: サイドバーレイアウト提供
+
+## 拡張性
+
+### 新しい状態の追加
+現在はログイン/未ログインの2状態ですが、以下のような状態を追加可能：
+- ローディング状態
+- エラー状態
+- 権限不足状態
+
+### 追加機能の統合
+- 通知設定
+- プライバシー設定
+- 組織管理機能
+
+## ベストプラクティス
+
+### 条件分岐の管理
+- 明確な条件分岐ロジック
+- 適切なフォールバック処理
+- エラー状態の考慮
+
+### パフォーマンス最適化
+- `useMemo`の適切な使用
+- 依存配列の正確な指定
+- 不要な再レンダリングの回避

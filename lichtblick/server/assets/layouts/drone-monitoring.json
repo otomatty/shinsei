@@ -1,0 +1,46 @@
+{
+  "configById": {
+    "3D!1": {
+      "followTf": "base_link",
+      "layers": {
+        "grid": {
+          "visible": true
+        }
+      }
+    },
+    "Plot!1": {
+      "paths": [
+        {
+          "value": "/telemetry.altitude",
+          "enabled": true
+        },
+        {
+          "value": "/telemetry.battery_voltage",
+          "enabled": true
+        }
+      ]
+    },
+    "Indicator!1": {
+      "path": "/telemetry.battery_percentage",
+      "style": "vertical",
+      "minValue": 0,
+      "maxValue": 100
+    }
+  },
+  "globalVariables": {},
+  "userNodes": {},
+  "playbackConfig": {
+    "speed": 1
+  },
+  "layout": {
+    "first": "3D!1",
+    "second": {
+      "first": "Plot!1",
+      "second": "Indicator!1",
+      "direction": "row",
+      "splitPercentage": 70
+    },
+    "direction": "column",
+    "splitPercentage": 55
+  }
+}

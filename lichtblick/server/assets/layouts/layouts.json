@@ -1,0 +1,47 @@
+[
+  {
+    "id": "robotics-dashboard",
+    "name": "Robotics Dashboard",
+    "publisher": "Robotics Team",
+    "description": "A comprehensive dashboard for robotics data visualization",
+    "keywords": ["robotics", "dashboard", "visualization"],
+    "thumbnail": null,
+    "layout": "http://localhost:3001/layouts/robotics-dashboard.json"
+  },
+  {
+    "id": "autonomous-vehicle-layout",
+    "name": "Autonomous Vehicle Layout",
+    "publisher": "AV Development Team",
+    "description": "Layout optimized for autonomous vehicle development",
+    "keywords": ["autonomous", "vehicle", "3d", "sensors"],
+    "thumbnail": null,
+    "layout": "http://localhost:3001/layouts/autonomous-vehicle-layout.json"
+  },
+  {
+    "id": "drone-monitoring",
+    "name": "Drone Monitoring",
+    "publisher": "Drone Operations",
+    "description": "Real-time drone telemetry monitoring layout",
+    "keywords": ["drone", "uav", "telemetry", "monitoring"],
+    "thumbnail": null,
+    "layout": "http://localhost:3001/layouts/drone-monitoring.json"
+  },
+  {
+    "id": "minimal-debug",
+    "name": "Minimal Debug Layout",
+    "publisher": "Debug Team",
+    "description": "Simple layout for quick debugging sessions",
+    "keywords": ["debug", "minimal", "simple"],
+    "thumbnail": null,
+    "layout": "http://localhost:3001/layouts/minimal-debug.json"
+  },
+  {
+    "id": "sample1",
+    "name": "Sample Layout 1",
+    "publisher": "Lichtblick Team",
+    "description": "Sample layout with 3D panel and Diagnostic Status panel",
+    "keywords": ["sample", "3d", "diagnostics"],
+    "thumbnail": null,
+    "layout": "http://localhost:3001/layouts/sample1.json"
+  }
+]

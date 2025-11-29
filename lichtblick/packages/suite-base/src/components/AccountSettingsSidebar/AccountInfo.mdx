@@ -1,0 +1,143 @@
+# AccountInfo
+
+ログイン済みユーザーのアカウント情報表示コンポーネント
+
+## 概要
+
+`AccountInfo`は、ログイン済みユーザーのアカウント情報を表示し、アカウント管理機能を提供するコンポーネントです。ユーザー情報の表示、外部アカウント設定ページへのリンク、安全なサインアウト機能を提供します。
+
+## 主な機能
+
+### ✅ ユーザー情報表示
+- ユーザーのメールアドレス
+- 組織名（表示名または組織スラッグ）
+- ユーザーアバターアイコン
+
+### ✅ アカウント管理
+- 外部アカウント設定ページへのリンク
+- 確認ダイアログ付きサインアウト機能
+- 非同期処理のローディング状態表示
+
+### ✅ エラーハンドリング
+- サインアウト時のエラーキャッチ
+- ユーザーへの適切なエラー通知
+- ログ記録による問題追跡
+
+## Props
+
+```typescript
+interface Props {
+  currentUser?: User;
+}
+```
+
+| プロパティ | 型 | 必須 | 説明 |
+|-----------|---|------|------|
+| `currentUser` | `User` | ❌ | 現在ログインしているユーザー情報 |
+
+## 使用例
+
+```tsx
+import AccountInfo from './AccountInfo';
+
+function MyComponent() {
+  const { currentUser } = useCurrentUser();
+
+  return (
+    <AccountInfo currentUser={currentUser} />
+  );
+}
+```
+
+## UI構成
+
+```
+┌─────────────────────────────────┐
+│ ┌─────┐ user@example.com       │
+│ │ 👤  │ Organization Name       │
+│ └─────┘                        │
+│                                │
+│ [Account settings]             │
+│                                │
+│                                │
+│ [Sign out] 🔄                  │
+└─────────────────────────────────┘
+```
+
+## 状態管理
+
+### ログイン状態
+- `currentUser`が存在する場合：アカウント情報を表示
+- `currentUser`が`undefined`の場合：何も表示しない
+
+### ローディング状態
+- サインアウト処理中：ボタンにローディングスピナーを表示
+- 非同期処理のエラーハンドリング
+
+## 依存関係
+
+### Context
+- `useCurrentUser`: ユーザー情報とサインアウト機能
+- `useSnackbar`: エラー通知システム
+- `useConfirm`: 確認ダイアログ
+
+### コンポーネント
+- `Stack`: レイアウト管理
+- `BlockheadFilledIcon`: ユーザーアバターアイコン
+- Material-UI コンポーネント（Button, Typography, CircularProgress）
+
+## スタイリング
+
+```typescript
+const useStyles = makeStyles()((theme) => ({
+  icon: {
+    color: theme.palette.primary.main,
+    fontSize: 42,
+  },
+}));
+```
+
+- Material-UIテーマシステムとの完全連動
+- プライマリカラーによるアイコン着色
+- 統一されたアイコンサイズ（42px）
+
+## セキュリティ考慮事項
+
+### 安全なサインアウト
+- 確認ダイアログによる誤操作防止
+- 非同期処理でのエラーハンドリング
+- 適切なログ記録
+
+### 外部リンク
+- 環境変数による設定URL管理
+- 新しいタブでの安全な外部ページ遷移
+
+## アクセシビリティ
+
+- セマンティックなHTML構造
+- 適切な色彩コントラスト
+- キーボードナビゲーション対応
+- スクリーンリーダー対応
+
+## パフォーマンス
+
+- `useCallback`による関数メモ化
+- 条件分岐による不要なレンダリング回避
+- 非同期処理の適切な状態管理
+
+## テスト
+
+Storybookストーリーが提供されています：
+- `SignedIn`: ログイン済みユーザーの表示確認
+
+## 関連コンポーネント
+
+- `AccountSettings`: 親コンポーネント
+- `SigninForm`: 未ログイン時の代替表示
+- `AccountSyncGraphic`: 同期グラフィック表示
+
+## 環境変数
+
+| 変数名 | 説明 |
+|--------|------|
+| `LICHTBLICK_ACCOUNT_PROFILE_URL` | アカウント設定ページのURL |

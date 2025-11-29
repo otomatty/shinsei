@@ -1,0 +1,41 @@
+{
+  "name": "mcap-indexing-extension",
+  "displayName": "MCAP Indexing Tool",
+  "description": "Create indexed versions of MCAP files for better performance",
+  "publisher": "lichtblick-tools",
+  "homepage": "https://github.com/lichtblickhtblicklichtblickite/lichtblick",
+  "version": "1.0.0",
+  "license": "MPL-2.0",
+  "main": "./dist/extension.js",
+  "keywords": [
+    "mcap",
+    "indexing",
+    "performance",
+    "lichtblick"
+  ],
+  "scripts": {
+    "build": "lichtblick-extension build",
+    "lichtblick:prepubllichtblick": "lichtblick-extension build --mode production",
+    "lint": "eslint .",
+    "lint:ci": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "local-install": "lichtblick-extension install",
+    "package": "lichtblick-extension package",
+    "pretest": "lichtblick-extension pretest"
+  },
+  "devDependencies": {
+    "@lichtblick/eslint-plugin": "1.0.4",
+    "@lichtblick/suite": "1.19.0",
+    "@types/react": "18.3.24",
+    "@types/react-dom": "18.3.7",
+    "create-lichtblick-extension": "1.0.0",
+    "eslint": "8.57.1",
+    "prettier": "3.6.2",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "typescript": "5.9.2"
+  },
+  "dependencies": {
+    "@mcap/core": "^2.1.7"
+  }
+}

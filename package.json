@@ -1,0 +1,15 @@
+{
+  "name": "shinsei",
+  "version": "0.1.0",
+  "description": "Tauri + Leptos App with Tailwind CSS",
+  "scripts": {
+    "dev": "trunk serve",
+    "build": "trunk build"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1",
+    "postcss": "^8.4.35",
+    "autoprefixer": "^10.4.17"
+  }
+}
+

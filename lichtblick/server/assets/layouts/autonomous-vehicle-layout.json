@@ -1,0 +1,34 @@
+{
+  "configById": {
+    "3D!1": {
+      "layers": {
+        "grid": {
+          "visible": true
+        }
+      }
+    },
+    "ImageView!1": {
+      "cameraTopic": "/camera/front/image",
+      "enabledMarkerTopics": ["/detections"]
+    }
+  },
+  "globalVariables": {},
+  "userNodes": {},
+  "playbackConfig": {
+    "speed": 1
+  },
+  "layout": {
+    "first": {
+      "first": "3D!1",
+      "second": "Map!1",
+      "direction": "row"
+    },
+    "second": {
+      "first": "ImageView!1",
+      "second": "Plot!1",
+      "direction": "row"
+    },
+    "direction": "column",
+    "splitPercentage": 65
+  }
+}

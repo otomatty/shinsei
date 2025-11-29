@@ -1,0 +1,35 @@
+{
+  "name": "autonomous-driving-monitor",
+  "displayName": "Autonomous Driving Monitor",
+  "description": "Real-time visualization tools for autonomous driving systems in Lichtblick",
+  "publisher": "lichtblick-demo",
+  "homepage": "https://github.com/lichtblick-demo/autonomous-driving-monitor",
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "./dist/extension.js",
+  "keywords": [],
+  "scripts": {
+    "build": "lichtblick-extension build",
+    "lichtblick:prepubllichtblick": "lichtblick-extension build --mode production",
+    "lint": "eslint .",
+    "lint:ci": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "local-install": "lichtblick-extension install",
+    "package": "lichtblick-extension package",
+    "pretest": "lichtblick-extension pretest"
+  },
+  "devDependencies": {
+    "@lichtblick/eslint-plugin": "1.0.4",
+    "@lichtblick/suite": "1.17.0",
+    "@types/d3": "^7.4.3",
+    "@types/react": "18.3.23",
+    "@types/react-dom": "18.3.7",
+    "create-lichtblick-extension": "1.0.0",
+    "d3": "^7.9.0",
+    "eslint": "8.57.1",
+    "prettier": "3.6.2",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "typescript": "5.8.3"
+  }
+}

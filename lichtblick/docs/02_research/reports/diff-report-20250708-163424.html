@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSSカスタマイズ差分レポート</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            border-bottom: 3px solid #007acc;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #555;
+            margin-top: 30px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-left: 4px solid #007acc;
+        }
+        .info-section {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .file-list {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .added { color: #28a745; font-weight: bold; }
+        .removed { color: #dc3545; font-weight: bold; }
+        .modified { color: #ffc107; font-weight: bold; }
+        .file-item {
+            padding: 5px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .file-item:last-child {
+            border-bottom: none;
+        }
+        .stats {
+            font-size: 0.9em;
+            color: #666;
+            margin-left: 20px;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        .summary-box {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+        .summary-item {
+            text-align: center;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            flex: 1;
+            margin: 0 10px;
+        }
+        .summary-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #007acc;
+        }
+        button {
+            background-color: #007acc;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #005a9c;
+        }
+        .collapsible {
+            cursor: pointer;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border: none;
+            outline: none;
+            width: 100%;
+            text-align: left;
+        }
+        .collapsible:hover {
+            background-color: #ddd;
+        }
+        .content {
+            padding: 0 15px;
+            display: none;
+            overflow: hidden;
+        }
+        .content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 OSSカスタマイズ差分レポート</h1>
+
+        <div class="info-section">
+            <h3>📊 基本情報</h3>
+            <p><strong>OSS ディレクトリ:</strong> <code>OSS_DIR_PLACEHOLDER</code></p>
+            <p><strong>カスタム ディレクトリ:</strong> <code>CUSTOM_DIR_PLACEHOLDER</code></p>
+            <p><strong>レポート生成日時:</strong> <code>TIMESTAMP_PLACEHOLDER</code></p>
+        </div>
+
+        <div class="summary-box">
+            <div class="summary-item">
+                <div class="summary-number added" id="added-count">0</div>
+                <div>新規追加</div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-number removed" id="removed-count">0</div>
+                <div>削除</div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-number modified" id="modified-count">0</div>
+                <div>変更</div>
+            </div>
+        </div>
+
+        <div id="diff-content">
+            <!-- 差分内容がここに挿入されます -->
+        </div>
+    </div>
+
+    <script>
+        // 折りたたみ機能
+        document.querySelectorAll('.collapsible').forEach(function(button) {
+            button.addEventListener('click', function() {
+                this.classList.toggle('active');
+                var content = this.nextElementSibling;
+                content.classList.toggle('active');
+            });
+        });
+
+        // サマリーカウント更新
+        function updateSummary() {
+            document.getElementById('added-count').textContent = document.querySelectorAll('.added').length;
+            document.getElementById('removed-count').textContent = document.querySelectorAll('.removed').length;
+            document.getElementById('modified-count').textContent = document.querySelectorAll('.modified').length;
+        }
+
+        // フィルタリング機能
+        function filterFiles(type) {
+            const allItems = document.querySelectorAll('.file-item');
+            allItems.forEach(item => {
+                if (type === 'all' || item.classList.contains(type)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // エクスポート機能
+        function exportData(format) {
+            if (format === 'csv') {
+                // CSV形式でエクスポート
+                console.log('CSV export not implemented yet');
+            } else if (format === 'json') {
+                // JSON形式でエクスポート
+                console.log('JSON export not implemented yet');
+            }
+        }
+
+        // 初期化
+        document.addEventListener('DOMContentLoaded', function() {
+            updateSummary();
+        });
+    </script>
+</body>
+</html>

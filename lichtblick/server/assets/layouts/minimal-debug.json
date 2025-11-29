@@ -1,0 +1,26 @@
+{
+  "configById": {
+    "RawMessages!1": {
+      "topicPath": "/diagnostics"
+    },
+    "Plot!1": {
+      "paths": [
+        {
+          "value": "/diagnostics.cpu_percent",
+          "enabled": true
+        }
+      ]
+    }
+  },
+  "globalVariables": {},
+  "userNodes": {},
+  "playbackConfig": {
+    "speed": 1
+  },
+  "layout": {
+    "first": "RawMessages!1",
+    "second": "Plot!1",
+    "direction": "row",
+    "splitPercentage": 50
+  }
+}

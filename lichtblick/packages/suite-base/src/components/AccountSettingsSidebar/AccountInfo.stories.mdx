@@ -1,0 +1,224 @@
+# AccountInfo.stories
+
+AccountInfoコンポーネントのStorybookストーリー定義
+
+## 概要
+
+`AccountInfo.stories.tsx`は、`AccountInfo`コンポーネントのStorybookストーリーを定義するファイルです。コンポーネントの視覚的テスト、ドキュメント化、デザインシステムとの整合性確認を目的としています。
+
+## ストーリー構成
+
+### デフォルト設定
+```typescript
+export default {
+  title: "AccountSettingsSidebar/AccountInfo",
+  component: AccountInfo,
+};
+```
+
+- **title**: Storybookでの表示パス
+- **component**: 対象コンポーネント
+- **階層**: `AccountSettingsSidebar`配下に配置
+
+## ストーリー定義
+
+### SignedIn ストーリー
+
+ログイン済みユーザーの`AccountInfo`コンポーネント表示を確認するストーリー
+
+```typescript
+export const SignedIn: StoryObj = {
+  render: () => {
+    const org: User["org"] = {
+      id: "fake-orgid",
+      slug: "fake-org",
+      displayName: "Fake Org",
+      isEnterprise: false,
+      allowsUploads: false,
+      supportsEdgeSites: false,
+    };
+
+    const me = {
+      id: "fake-userid",
+      orgId: org.id,
+      orgDisplayName: org.displayName,
+      orgSlug: org.slug,
+      orgPaid: false,
+      email: "foo@example.com",
+      org,
+    };
+
+    return <AccountInfo currentUser={me} />;
+  },
+};
+```
+
+## モックデータ構造
+
+### 組織データ (org)
+| プロパティ | 値 | 説明 |
+|-----------|---|------|
+| `id` | `"fake-orgid"` | 組織の一意識別子 |
+| `slug` | `"fake-org"` | 組織のURL用スラッグ |
+| `displayName` | `"Fake Org"` | 組織の表示名 |
+| `isEnterprise` | `false` | エンタープライズ版かどうか |
+| `allowsUploads` | `false` | アップロード許可 |
+| `supportsEdgeSites` | `false` | エッジサイト対応 |
+
+### ユーザーデータ (me)
+| プロパティ | 値 | 説明 |
+|-----------|---|------|
+| `id` | `"fake-userid"` | ユーザーの一意識別子 |
+| `orgId` | `"fake-orgid"` | 所属組織ID |
+| `orgDisplayName` | `"Fake Org"` | 組織表示名 |
+| `orgSlug` | `"fake-org"` | 組織スラッグ |
+| `orgPaid` | `false` | 有料組織かどうか |
+| `email` | `"foo@example.com"` | ユーザーのメールアドレス |
+| `org` | `org` | 組織オブジェクト |
+
+## テスト観点
+
+### 視覚的確認
+- ✅ ユーザー情報の正しい表示
+- ✅ アバターアイコンの配置
+- ✅ ボタンの表示とスタイリング
+- ✅ レイアウトの整合性
+
+### 情報表示
+- ✅ メールアドレスの表示
+- ✅ 組織名の表示（displayName優先）
+- ✅ プライマリボタンのスタイル
+- ✅ セカンダリボタンのスタイル
+
+### レスポンシブ対応
+- ✅ 異なる画面幅での表示
+- ✅ モバイル環境での最適化
+- ✅ テキストの折り返し処理
+
+## Storybookでの表示
+
+### 表示内容
+```
+┌─────────────────────────────────┐
+│ ┌─────┐ foo@example.com        │
+│ │ 👤  │ Fake Org               │
+│ └─────┘                        │
+│                                │
+│ [Account settings]             │
+│                                │
+│                                │
+│ [Sign out]                     │
+└─────────────────────────────────┘
+```
+
+### インタラクション
+- **Account settings**: ボタンクリック（実際の遷移なし）
+- **Sign out**: ボタンクリック（実際のサインアウトなし）
+- **ホバー効果**: ボタンの視覚的フィードバック
+
+## 開発ワークフロー
+
+### 1. デザイン確認
+- UI/UXデザイナーによる視覚的レビュー
+- デザインシステムとの整合性確認
+- ブランドガイドラインの遵守
+
+### 2. 機能テスト
+- コンポーネントの正常動作確認
+- Props の適切な反映
+- エラー状態の処理
+
+### 3. アクセシビリティ
+- キーボードナビゲーション
+- スクリーンリーダー対応
+- 色彩コントラスト確認
+
+## 拡張可能性
+
+### 追加ストーリー案
+```typescript
+// 組織名なしユーザー
+export const NoOrgDisplayName: StoryObj = {
+  render: () => {
+    const me = {
+      // orgDisplayName を null に設定
+      orgDisplayName: null,
+      orgSlug: "fallback-org",
+      // ... 他のプロパティ
+    };
+    return <AccountInfo currentUser={me} />;
+  },
+};
+
+// エンタープライズユーザー
+export const EnterpriseUser: StoryObj = {
+  render: () => {
+    const org = {
+      isEnterprise: true,
+      allowsUploads: true,
+      supportsEdgeSites: true,
+      // ... 他のプロパティ
+    };
+    // ...
+  },
+};
+
+// 長いメールアドレス
+export const LongEmailAddress: StoryObj = {
+  render: () => {
+    const me = {
+      email: "very.long.email.address@example-organization.com",
+      // ... 他のプロパティ
+    };
+    return <AccountInfo currentUser={me} />;
+  },
+};
+```
+
+### 状態バリエーション
+- **ローディング状態**: サインアウト処理中
+- **エラー状態**: 処理失敗時
+- **権限別表示**: 異なる組織権限
+
+## ベストプラクティス
+
+### モックデータ設計
+- **現実的なデータ**: 実際の使用パターンを反映
+- **エッジケース**: 境界条件の考慮
+- **一貫性**: 他のストーリーとの整合性
+
+### ストーリー命名
+- **明確な名前**: 何をテストするかが分かる
+- **英語表記**: 国際化対応
+- **階層構造**: 論理的なグループ化
+
+### メンテナンス
+- **型安全性**: TypeScriptによる型チェック
+- **依存関係**: 最小限の外部依存
+- **更新頻度**: コンポーネント変更時の同期
+
+## 関連ファイル
+
+### 対象コンポーネント
+- `AccountInfo.tsx`: メインコンポーネント
+- `AccountInfo.mdx`: コンポーネントドキュメント
+
+### 関連ストーリー
+- `AccountSettings.stories.tsx`: 親コンポーネント
+- `SigninForm.stories.tsx`: 兄弟コンポーネント
+
+### 設定ファイル
+- `.storybook/main.js`: Storybook設定
+- `.storybook/preview.js`: グローバル設定
+
+## トラブルシューティング
+
+### よくある問題
+1. **Context未提供**: `useCurrentUser`の動作エラー
+2. **型エラー**: モックデータの型不整合
+3. **スタイル未適用**: テーマプロバイダーの設定不足
+
+### 解決方法
+1. **Decoratorの使用**: 必要なContextを提供
+2. **型定義の確認**: 最新の型定義に合わせる
+3. **プロバイダー設定**: `.storybook/preview.js`の確認

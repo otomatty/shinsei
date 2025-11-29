@@ -1,0 +1,206 @@
+# SigninForm
+
+未ログインユーザー向けのサインインフォームコンポーネント
+
+## 概要
+
+`SigninForm`は、未ログインユーザーに対してFoxgloveアカウントの価値提案を表示し、サインインを促すコンポーネントです。視覚的なグラフィックと明確な機能説明により、ユーザーのアカウント作成を促進します。
+
+## 主な機能
+
+### ✅ 価値提案の表示
+- レイアウト同期機能の説明
+- レイアウト共有機能の説明
+- ロボティクスデータ管理機能の説明
+
+### ✅ 視覚的な訴求
+- `AccountSyncGraphic`による同期概念の視覚化
+- 中央配置による目立つ表示
+
+### ✅ アクション促進
+- プライマリカラーのサインインボタン
+- 明確なCTA（Call to Action）
+
+## Props
+
+このコンポーネントはPropsを受け取りません。
+
+## 使用例
+
+```tsx
+import SigninForm from './SigninForm';
+
+function AccountSettings() {
+  const { currentUser } = useCurrentUser();
+
+  if (!currentUser) {
+    return <SigninForm />;
+  }
+
+  return <AccountInfo currentUser={currentUser} />;
+}
+```
+
+## UI構成
+
+```
+┌─────────────────────────────────┐
+│          🌐                    │
+│     (同期グラフィック)          │
+│                                │
+│ Create a Foxglove account to:   │
+│                                │
+│ • Sync your layouts across     │
+│   multiple devices             │
+│ • Share your layouts with      │
+│   others                       │
+│ • Manage and store your        │
+│   robotics data                │
+│                                │
+│ [Sign in]                      │
+└─────────────────────────────────┘
+```
+
+## スタイリング
+
+```typescript
+const useStyles = makeStyles()((theme) => ({
+  root: {
+    display: "flex",
+    flexDirection: "column",
+    gap: theme.spacing(2.5),
+  },
+  icon: {
+    display: "flex",
+    justifyContent: "center",
+    color: theme.palette.primary.main,
+  },
+}));
+```
+
+### デザイン特徴
+- **縦方向レイアウト**: `flexDirection: "column"`
+- **適切な間隔**: `gap: theme.spacing(2.5)`
+- **中央配置**: `justifyContent: "center"`
+- **テーマ連動**: `theme.palette.primary.main`
+
+## 機能説明
+
+### 1. レイアウト同期
+```
+• Sync your layouts across multiple devices
+```
+- 複数デバイス間でのレイアウト設定の同期
+- クラウドベースの設定保存
+- デバイス間での一貫したユーザー体験
+
+### 2. レイアウト共有
+```
+• Share your layouts with others
+```
+- チームメンバーとの設定共有
+- コラボレーション機能
+- 知見の共有とベストプラクティス展開
+
+### 3. データ管理
+```
+• Manage and store your robotics data
+```
+- ロボティクスデータの安全な保存
+- データの整理と管理
+- 長期的なデータ保持
+
+## 依存関係
+
+### Context
+- `useCurrentUser`: サインイン機能の取得
+
+### コンポーネント
+- `AccountSyncGraphic`: 同期概念の視覚化
+- Material-UI コンポーネント（Button, Typography）
+
+### スタイリング
+- `makeStyles`: Material-UIテーマ統合
+- `tss-react/mui`: TypeScript対応スタイリング
+
+## ユーザーエクスペリエンス
+
+### 視覚的階層
+1. **グラフィック**: 最初に目に入る視覚的要素
+2. **価値提案**: 明確な機能説明
+3. **アクション**: 目立つサインインボタン
+
+### 認知負荷の軽減
+- **簡潔な説明**: 3つの主要機能に絞った説明
+- **視覚的支援**: グラフィックによる概念理解
+- **明確なCTA**: 迷わないアクションボタン
+
+## アクセシビリティ
+
+### セマンティック構造
+- 適切なHTMLタグの使用
+- 論理的な情報階層
+- スクリーンリーダー対応
+
+### 色彩とコントラスト
+- Material-UIテーマによる適切なコントラスト
+- プライマリカラーの効果的な使用
+- 色覚障害者への配慮
+
+## パフォーマンス
+
+### 軽量な実装
+- 静的コンテンツによる高速表示
+- 最小限の依存関係
+- 効率的なスタイリング
+
+### レンダリング最適化
+- 条件分岐による適切な表示制御
+- 不要な再レンダリングの回避
+
+## マーケティング観点
+
+### 価値提案の明確化
+- **同期**: 利便性の向上
+- **共有**: チームワークの促進
+- **管理**: データの安全性
+
+### 心理的障壁の軽減
+- **無料感の演出**: "Create a Foxglove account"
+- **具体的メリット**: 明確な機能説明
+- **視覚的安心感**: 同期グラフィック
+
+## 関連コンポーネント
+
+### 親コンポーネント
+- `AccountSettings`: 条件分岐による表示制御
+
+### 兄弟コンポーネント
+- `AccountInfo`: ログイン後の表示
+
+### 子コンポーネント
+- `AccountSyncGraphic`: 同期概念の視覚化
+
+## 拡張性
+
+### 追加機能の統合
+- **ソーシャルログイン**: Google, GitHub等
+- **試用機能**: 無料トライアル
+- **プロモーション**: 特別オファー
+
+### A/Bテスト対応
+- 異なる価値提案の比較
+- ボタンテキストの最適化
+- グラフィックの効果測定
+
+## ベストプラクティス
+
+### UXデザイン
+- 明確な価値提案
+- 視覚的な訴求力
+- 簡潔なアクション
+
+### 技術実装
+- 適切なスタイリング
+- テーマシステムの活用
+- パフォーマンスの考慮

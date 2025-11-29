@@ -1,0 +1,590 @@
+[
+  {
+    "id": "foxglove.blank-panel-extension",
+    "name": "Blank Panel",
+    "publisher": "foxglove",
+    "description": "Add a little space to your layout",
+    "homepage": "https://github.com/foxglove/blank-panel-extension",
+    "license": "MIT",
+    "keywords": ["blank", "panel", "empty", "logo", "spacer"],
+    "thumbnail": null,
+    "namespace": "marketplace",
+    "readme": "https://raw.githubusercontent.com/foxglove/blank-panel-extension/main/README.md",
+    "changelog": "https://raw.githubusercontent.com/foxglove/blank-panel-extension/main/CHANGELOG.md",
+    "versions": {
+      "1.0.0": {
+        "version": "1.0.0",
+        "publishedDate": "2025-10-04T01:21:25Z",
+        "sha256sum": "fa2b11af8ed7c420ca6e541196bca608661c0c1a81cd1f768c565c72a55a63c8",
+        "foxe": "https://github.com/foxglove/blank-panel-extension/releases/download/1.0.0/foxglove.blank-panel-extension-1.0.0.foxe"
+      }
+    }
+  },
+  {
+    "id": "uwprl.studio-extension-mushr",
+    "name": "mushr",
+    "publisher": "uwprl",
+    "description": "Custom buttons for differentiating publish types for the MuSHR base package",
+    "homepage": "https://github.com/prl-mushr/foxglove-mushr-extension",
+    "license": "UNLICENSED",
+    "keywords": ["mushr", "simulator"],
+    "thumbnail": null,
+    "namespace": "marketplace",
+    "readme": "https://raw.githubusercontent.com/prl-mushr/foxglove-mushr-extension/main/README.md",
+    "changelog": "https://raw.githubusercontent.com/prl-mushr/foxglove-mushr-extension/main/CHANGELOG.md",
+    "versions": {
+      "1.0.0": {
+        "version": "1.0.0",
+        "publishedDate": "2025-10-04T01:21:25Z",
+        "sha256sum": "ac07f5f84b96ad1139b4d66b685b864cf5713081e198e63fccef7a0546dd1ab2",
+        "foxe": "https://github.com/prl-mushr/foxglove-mushr-extension/releases/download/release_1_0_0/uwprl.MushrTeleopButtons-1.0.0.foxe"
+      }
+    }
+  },
+  {
+    "id": "sideways.studio-extension-sideways",
+    "name": "Sideways Teleop Panel",
+    "publisher": "sideways",
+    "description": "This is the teleoperation panel developed by Sideways a company of autonomous vehicles",
+    "homepage": "https://github.com/rscova/foxglove-sideways-teleop-extension",
+    "license": "UNLICENSED",
+    "keywords": ["sideways", "teleop"],
+    "thumbnail": null,
+    "namespace": "marketplace",
+    "readme": "https://raw.githubusercontent.com/rscova/foxglove-sideways-teleop-extension/main/README.md",
+    "changelog": "https://raw.githubusercontent.com/rscova/foxglove-sideways-teleop-extension/main/CHANGELOG.md",
+    "versions": {
+      "0.0.1": {
+        "version": "0.0.1",
+        "publishedDate": "2025-10-04T01:21:25Z",
+        "sha256sum": "1193589eb2779a1224328defca4e2ca378ef786474be1842ac43b674b9535d82",
+        "foxe": "https://github.com/rscova/foxglove-sideways-teleop-extension/releases/download/v0.0.1/sideways.sideways-teleop-extension-0.0.1.foxe"
+      }
+    }
+  },
+  {
+    "id": "danielclapp.ros2-parameter-extension",
+    "name": "ROS2 Parameters",
+    "publisher": "Daniel Clapp",
+    "description": "Interact with parameters in ROS2",
+    "homepage": "https://github.com/danclapp4/ros2-parameter-extension.git",
+    "license": "MIT",
+    "keywords": ["ROS2", "Parameters", "Param"],
+    "thumbnail": null,
+    "namespace": "marketplace",
+    "readme": "https://raw.githubusercontent.com/danclapp4/ros2-parameter-extension/main/README.md",
+    "changelog": "https://raw.githubusercontent.com/danclapp4/ros2-parameter-extension/main/CHANGELOG.md",
+    "versions": {
+      "0.0.1": {
+        "version": "0.0.1",
+        "publishedDate": "2025-10-04T01:21:25Z",
+        "sha256sum": "f03d7a517ba6f7d57564eec965358055c87285a8a504d5488af969767a76c4ab",
+        "foxe": "https://github.com/danclapp4/ros2-parameter-extension/releases/download/v0.0.1/danielclapp.ros2-parameter-extension-0.0.1.foxe"
+      }
+    }
+  },
+  {
+    "id": "yulong.studio-extension-virtual-joystick",
+    "name": "virtual-joystick",
+    "publisher": "yulong",
+    "description": "Twist message publisher",
+    "homepage": "https://github.com/yulong88888/foxglove-nipple",
+    "license": "MIT",
+    "keywords": ["joystick"],
+    "thumbnail": null,
+    "namespace": "marketplace",
+    "readme": "https://raw.githubusercontent.com/yulong88888/foxglove-nipple/main/README.md",
+    "changelog": "https://raw.githubusercontent.com/yulong88888/foxglove-nipple/main/CHANGELOG.md",
+    "versions": {
+      "0.0.2": {
+        "version": "0.0.2",
+        "publishedDate": "2025-10-04T01:21:25Z",
+        "sha256sum": "71ae6c6ffa4b86aa427d14fcc86af437fdca4b5e10cd714e70f95e1af324ceaf",
+        "foxe": "https://github.com/yulong88888/foxglove-nipple/releases/download/v0.0.2/yulong.virtual-joystick-0.0.2.foxe"
+      }
+    }
+  },
+  {
+    "id": "missionrobotics.h264-panel",
+    "name": "H264 video panel",
+    "publisher": "Mission Robotics",
+    "description": "Experimental H264 playback",
+    "homepage": "https://github.com/codewithpassion/foxglove-studio-h264-extension",
+    "license": "MIT",
+    "keywords": ["video", "h264"],
+    "thumbnail": null,
+    "namespace": "marketplace",
+    "readme": "https://raw.githubusercontent.com/codewithpassion/foxglove-studio-h264-extension/v0.1.0/README.md",
+    "changelog": "https://raw.githubusercontent.com/codewithpassion/foxglove-studio-h264-extension/v0.1.0/CHANGELOG.md",
+    "versions": {
+      "0.1.0": {
+        "version": "0.1.0",
+        "publishedDate": "2025-10-04T01:21:25Z",
+        "sha256sum": "87e0a4fe397974fb2e3771f370009ccdbe195498d4792c04bc08b2e2482bda71",
+        "foxe": "https://github.com/codewithpassion/foxglove-studio-h264-extension/releases/download/v0.1.0/missionrobotics.h264-panel-0.1.0.foxe"
+      }
+    }
+  },
+  {
+    "id": "ivi.orientation-extension",
+    "name": "orientation",
+    "publisher": "IVI",
+    "description": "Display object orientation in 2D space",
+    "homepage": "https://github.com/CourchesneA/foxglove-orientation-panel",
+    "license": "MIT",
+    "keywords": ["orientation", "2d", "ros", "ros2"],
+    "thumbnail": null,
+    "namespace": "marketplace",
+    "readme": "https://raw.githubusercontent.com/CourchesneA/foxglove-orientation-panel/main/README.md",
+    "changelog": "https://raw.githubusercontent.com/CourchesneA/foxglove-orientation-panel/main/CHANGELOG.md",
+    "versions": {
+      "0.0.1": {
+        "version": "0.0.1",
+        "publishedDate": "2025-10-04T01:21:25Z",
+        "sha256sum": "6afa4437c45cb5b60a99405e40b0c51b4edfcc0f9a640532cc218962da1ee2b8",
+        "foxe": "https://github.com/CourchesneA/foxglove-orientation-panel/releases/download/v0.0.1/ivi.orientation-extension-0.0.1.foxe"
+      }
+    }
+  },
+  {
+    "id": "metaverseindustriesllc.plotly",
+    "name": "Plotly",
+    "publisher": "Metaverse Industries LLC",
+    "description": "Render plotly.Plot JSON messages",
+    "homepage": "https://github.com/MetaverseIndustries/plotly-panel",
+    "license": "MIT",
+    "keywords": ["plotly", "plot", "chart", "2d"],
+    "thumbnail": null,
+    "namespace": "marketplace",
+    "readme": "https://raw.githubusercontent.com/MetaverseIndustries/plotly-panel/main/README.md",
+    "changelog": "https://raw.githubusercontent.com/MetaverseIndustries/plotly-panel/main/CHANGELOG.md",
+    "versions": {
+      "1.0.0": {
+        "version": "1.0.0",
+        "publishedDate": "2025-10-04T01:21:25Z",
+        "sha256sum": "b5c02cb834005affcf1873a6a481281a73428d04062bbf763863c8fb7e64fc95",
+        "foxe": "https://github.com/MetaverseIndustries/plotly-panel/releases/download/v1.0.0/metaverseindustriesllc.plotly-1.0.0.foxe"
+      }
+    }
+  },
+  {
+    "id": "lynxdrone.battery-display",
+    "name": "battery-display",
+    "publisher": "Lynxdrone",
+    "description": "Compact battery level indicator",
+    "homepage": "https://github.com/Lynxdrone/foxglove-battery-extension",
+    "license": "MIT",
+    "keywords": ["ros", "battery", "indicator", "robot"],
+    "thumbnail": null,
+    "namespace": "marketplace",
+    "readme": "https://raw.githubusercontent.com/Lynxdrone/foxglove-battery-extension/main/README.md",
+    "changelog": "https://raw.githubusercontent.com/Lynxdrone/foxglove-battery-extension/main/CHANGELOG.md",
+    "versions": {
+      "1.0.0": {
+        "version": "1.0.0",
+        "publishedDate": "2025-10-04T01:21:25Z",
+        "sha256sum": "12863df314ec682e23ebb74598e3e3e89e610fa960f3461b5e91a6896ed8228f",
+        "foxe": "https://github.com/Lynxdrone/foxglove-battery-extension/releases/download/1.0.0/lynxdrone.battery-display-1.0.0.foxe"
+      }
+    }
+  },
+  {
+    "id": "joshnewans.joy-panel",
+    "name": "Joystick",
+    "publisher": "Josh Newans",
+    "description": "Control robots using a real or virtual joystick/gamepad",
+    "homepage": "https://github.com/joshnewans/foxglove-joystick/",
+    "license": "MIT",
+    "keywords": ["ros", "joystick", "gamepad", "control", "interactive", "touch"],
+    "thumbnail": null,
+    "namespace": "marketplace",
+    "readme": "https://raw.githubusercontent.com/joshnewans/foxglove-joystick/main/README.md",
+    "changelog": "https://raw.githubusercontent.com/joshnewans/foxglove-joystick/main/CHANGELOG.md",
+    "versions": {
+      "0.0.3": {
+        "version": "0.0.3",
+        "publishedDate": "2025-10-04T01:21:25Z",
+        "sha256sum": "bfbb33b91f337a25de79449f9b529bc94bfaf908187f39cef24d70d4e1083434",
+        "foxe": "https://github.com/joshnewans/foxglove-joystick/releases/download/0.0.3/joshnewans.joy-panel-0.0.3.foxe"
+      }
+    }
+  },
+  {
+    "id": "joshnewans.webcam-panel",
+    "name": "Webcam",
+    "publisher": "Josh Newans",
+    "description": "Publish data from your device's webcam",
+    "homepage": "https://github.com/joshnewans/foxglove-webcam/",
+    "license": "MIT",
+    "keywords": ["ros", "webcam"],
+    "thumbnail": null,
+    "namespace": "marketplace",
+    "readme": "https://raw.githubusercontent.com/joshnewans/foxglove-webcam/main/README.md",
+    "changelog": "https://raw.githubusercontent.com/joshnewans/foxglove-webcam/main/CHANGELOG.md",
+    "versions": {
+      "0.0.2": {
+        "version": "0.0.2",
+        "publishedDate": "2025-10-04T01:21:25Z",
+        "sha256sum": "5b2dbe3280a7833c8d827e4f3b8acfa4df9cf4cd16a5db037885a6cfcdd42041",
+        "foxe": "https://github.com/joshnewans/foxglove-webcam/releases/download/0.0.2/joshnewans.webcam-panel-0.0.2.foxe"
+      }
+    }
+  },
+  {
+    "id": "kminoda.autoware-msgs",
+    "name": "Autoware Msgs",
+    "publisher": "Koji Minoda",
+    "description": "Autoware messages",
+    "homepage": "https://github.com/kminoda/AutowareFoxgloveConverter",
+    "license": "Apache 2.0",
+    "keywords": ["ros", "autoware"],
+    "thumbnail": null,
+    "namespace": "marketplace",
+    "readme": "https://raw.githubusercontent.com/kminoda/AutowareFoxgloveConverter/main/README.md",
+    "changelog": "https://raw.githubusercontent.com/kminoda/AutowareFoxgloveConverter/main/CHANGELOG.md",
+    "versions": {
+      "0.0.1": {
+        "version": "0.0.1",
+        "publishedDate": "2025-10-04T01:21:25Z",
+        "sha256sum": "d7b831c665111aeab5779bea6f5b8f7d5c3afa6d2200d1f79ba2bafbb799497c",
+        "foxe": "https://github.com/kminoda/AutowareFoxgloveConverter/releases/download/v0.0.1/kminoda.AutowareFoxgloveConverter-0.0.1.foxe"
+      }
+    }
+  },
+  {
+    "id": "tier4.autoware-foxglove-extensions",
+    "name": "Autoware Foxglove Extensions",
+    "publisher": "TIER IV, Inc.",
+    "description": "Support for Autoware message types",
+    "homepage": "https://github.com/tier4/AutowareFoxgloveExtensions",
+    "license": "Apache 2.0",
+    "keywords": ["ros", "autoware"],
+    "thumbnail": null,
+    "namespace": "marketplace",
+    "readme": "https://raw.githubusercontent.com/tier4/AutowareFoxgloveExtensions/main/README.md",
+    "changelog": "https://raw.githubusercontent.com/tier4/AutowareFoxgloveExtensions/main/CHANGELOG.md",
+    "versions": {
+      "0.1.0": {
+        "version": "0.1.0",
+        "publishedDate": "2025-10-04T01:21:25Z",
+        "sha256sum": "a2af064bf0922e775b7978d5c8f1f3f834c3a062cf332a49cc7910170559b1d9",
+        "foxe": "https://github.com/tier4/AutowareFoxgloveExtensions/releases/download/v0.1.1/tier4.autoware-foxglove-extensions-0.1.1.foxe"
+      }
+    }
+  },
+  {
+    "id": "nvidia.nvblox_foxglove",
+    "name": "Isaac ROS Nvblox Foxglove",
+    "publisher": "NVIDIA",
+    "description": "Message converter to visualize nvblox data types in foxglove.",
+    "homepage": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_nvblox",
+    "license": "Apache 2.0",
+    "keywords": ["ros", "nvidia", "nvblox", "isaac"],
+    "thumbnail": null,
+    "namespace": "marketplace",
+    "readme": "https://raw.githubusercontent.com/NVIDIA-ISAAC-ROS/.github/refs/heads/main/resources/foxglove_plugins/README.md",
+    "changelog": "https://raw.githubusercontent.com/NVIDIA-ISAAC-ROS/.github/refs/heads/main/resources/foxglove_plugins/CHANGELOG.md",
+    "versions": {
+      "2.2.0": {
+        "version": "2.2.0",
+        "publishedDate": "2025-10-04T01:21:25Z",
+        "sha256sum": "e789390b13aa60a367695f09dcc70d86cfd912e20deef2352599a65c094839d5",
+        "foxe": "https://github.com/NVIDIA-ISAAC-ROS/.github/raw/main/resources/foxglove_plugins/nvidia.nvblox_foxglove-2.2.0.foxe"
+      }
+    }
+  },
+  {
+    "id": "danielalp.foxglove-vex-2d-panel",
+    "name": "2D VEX Panel",
+    "publisher": "Daniel Alp",
+    "description": "Visualize 2D paths on a VEX field.",
+    "homepage": "https://github.com/Daniel-Alp/foxglove-vex-2d-panel",
+    "license": "MIT",
+    "keywords": ["VEX", "odometry"],
+    "thumbnail": null,
+    "namespace": "marketplace",
+    "readme": "https://raw.githubusercontent.com/Daniel-Alp/foxglove-vex-2d-panel/master/README.md",
+    "changelog": "https://raw.githubusercontent.com/Daniel-Alp/foxglove-vex-2d-panel/master/CHANGELOG.md",
+    "versions": {
+      "1.0.0": {
+        "version": "1.0.0",
+        "publishedDate": "2025-10-04T01:21:25Z",
+        "sha256sum": "249be37fe7c42a2bf647b344f639b755956b5f656e232770b13353dea75c7696",
+        "foxe": "https://github.com/Daniel-Alp/foxglove-vex-2d-panel/releases/download/v1.0.0/danielalp.foxglove-vex-2d-panel-1.0.0.foxe"
+      }
+    }
+  },
+  {
+    "id": "rogyken.joint-state-publisher",
+    "name": "Joint State Publisher",
+    "publisher": "rogy-ken",
+    "description": "Publishing joint state messages that can be interacted with via the slider UI.",
+    "homepage": "https://github.com/rogy-ken/foxglove-joint-state-publisher",
+    "license": "MIT",
+    "keywords": ["ros", "joint", "jointstate", "robot", "arm"],
+    "thumbnail": null,
+    "namespace": "marketplace",
+    "readme": "https://raw.githubusercontent.com/rogy-ken/foxglove-joint-state-publisher/main/README.md",
+    "changelog": "https://raw.githubusercontent.com/rogy-ken/foxglove-joint-state-publisher/main/CHANGELOG.md",
+    "versions": {
+      "0.1.0": {
+        "version": "0.1.0",
+        "publishedDate": "2025-10-04T01:21:25Z",
+        "sha256sum": "3c1ba8195e31809939c89ce73320cdc47147f012f41b050029f6aae4dabc7c93",
+        "foxe": "https://github.com/rogy-ken/foxglove-joint-state-publisher/releases/download/v0.1.0/rogyken.joint-state-publisher-0.1.0.foxe"
+      }
+    }
+  },
+  {
+    "id": "usedhondacivic.foxglove-teleop-twist-keyboard",
+    "name": "Teleop Twist Keyboard",
+    "publisher": "usedhondacivic",
+    "description": "A foxglove version of the ROS teleop_twist_keyboard node, used to publish Twist messages based on keyboard control.",
+    "homepage": "https://github.com/usedhondacivic/foxglove-teleop-twist-keyboard",
+    "license": "MIT",
+    "keywords": ["ros", "teleop"],
+    "thumbnail": null,
+    "namespace": "marketplace",
+    "readme": "https://raw.githubusercontent.com/usedhondacivic/foxglove-teleop-twist-keyboard/refs/heads/main/README.md",
+    "changelog": "https://raw.githubusercontent.com/usedhondacivic/foxglove-teleop-twist-keyboard/refs/heads/main/CHANGELOG.md",
+    "versions": {
+      "v0.0.2": {
+        "version": "v0.0.2",
+        "publishedDate": "2025-10-04T01:21:25Z",
+        "sha256sum": "4e745bc48cbaf39b826b2d21215e30ef4586ebfa61f239ed0bb1575ca7bb4455",
+        "foxe": "https://github.com/usedhondacivic/foxglove-teleop-twist-keyboard/releases/download/v0.0.2/usedhondacivic.foxglove-teleop-twist-keyboard-v0.0.2.foxe"
+      }
+    }
+  },
+  {
+    "id": "peekrobotics.orientation-panel-3d",
+    "name": "Orientation Panel 3D",
+    "publisher": "peek-robotics",
+    "description": "A simple 3D visualization of orientation from topics containing quaternions",
+    "homepage": "https://github.com/peek-robotics/foxglove-orientation-panel-3d",
+    "license": "MIT",
+    "keywords": ["foxglove", "ros", "orientation", "quaternion"],
+    "thumbnail": null,
+    "namespace": "marketplace",
+    "readme": "https://raw.githubusercontent.com/peek-robotics/foxglove-orientation-panel-3d/refs/heads/main/README.md",
+    "changelog": "https://raw.githubusercontent.com/peek-robotics/foxglove-orientation-panel-3d/refs/heads/main/CHANGELOG.md",
+    "versions": {
+      "v0.0.5": {
+        "version": "v0.0.5",
+        "publishedDate": "2025-10-04T01:21:25Z",
+        "sha256sum": "5970656242d2a41524f777ca2ab114f64838e8cf5c9644bb355710f1ba35613e",
+        "foxe": "https://github.com/peek-robotics/foxglove-orientation-panel-3d/releases/download/v0.0.5/peekrobotics.orientation-panel-3d-0.0.5.foxe"
+      }
+    }
+  },
+  {
+    "id": "kabu.string-panel",
+    "name": "String Panel",
+    "publisher": "Ryo Kabutan",
+    "description": "This extension displays the string data of std_msg/String or std_msg/msg/String on the panel.",
+    "homepage": "https://github.com/Ry0/foxglove-string-panel",
+    "license": "MIT",
+    "keywords": ["foxglove", "ros", "string"],
+    "thumbnail": null,
+    "namespace": "marketplace",
+    "readme": "https://raw.githubusercontent.com/Ry0/foxglove-string-panel/refs/heads/master/README.md",
+    "changelog": "https://raw.githubusercontent.com/Ry0/foxglove-string-panel/refs/heads/master/CHANGELOG.md",
+    "versions": {
+      "v1.0.0": {
+        "version": "v1.0.0",
+        "publishedDate": "2025-10-04T01:21:25Z",
+        "sha256sum": "910fabdee7ab040d60e379c85fbe5bc17e38b13374a7ed858cf1635028f6fe28",
+        "foxe": "https://github.com/Ry0/foxglove-string-panel/releases/download/v1.0.0/kabu.string-panel-1.0.0.foxe"
+      }
+    }
+  },
+  {
+    "id": "fireflyautomatix.polygon-ros",
+    "name": "Polygon ROS",
+    "publisher": "Firefly Automatix",
+    "description": "Visualize complex polygons",
+    "homepage": "https://github.com/fireflyautomatix/foxglove-polygon-ros",
+    "license": "MIT",
+    "keywords": ["ros", "polygon", "2d"],
+    "thumbnail": null,
+    "namespace": "marketplace",
+    "readme": "https://raw.githubusercontent.com/fireflyautomatix/foxglove-polygon-ros/refs/heads/main/README.md",
+    "changelog": "https://raw.githubusercontent.com/fireflyautomatix/foxglove-polygon-ros/refs/heads/main/CHANGELOG.md",
+    "versions": {
+      "1.0.0": {
+        "version": "1.0.0",
+        "publishedDate": "2025-10-04T01:21:25Z",
+        "sha256sum": "494d92c445cffecfd399f7b5425af3addaaa523a8bf3364a0f8d2ca79016ed42",
+        "foxe": "https://github.com/fireflyautomatix/foxglove-polygon-ros/releases/download/1.0.0/fireflyautomatix.polygon-ros-1.0.0.foxe"
+      }
+    }
+  },
+  {
+    "id": "peekrobotics.orientation-panel-2d",
+    "name": "Orientation Panel 2D",
+    "publisher": "peek-robotics",
+    "description": "A 2D visualization of orientation data from ROS messages with toggleable roll, pitch, and yaw displays",
+    "homepage": "https://github.com/peek-robotics/foxglove-orientation-panel-2d",
+    "license": "MIT",
+    "keywords": ["foxglove", "ros", "orientation", "quaternion", "roll", "pitch", "yaw"],
+    "thumbnail": null,
+    "namespace": "marketplace",
+    "readme": "https://raw.githubusercontent.com/peek-robotics/foxglove-orientation-panel-2d/refs/heads/main/README.md",
+    "changelog": "https://raw.githubusercontent.com/peek-robotics/foxglove-orientation-panel-2d/refs/heads/main/CHANGELOG.md",
+    "versions": {
+      "v0.0.5": {
+        "version": "v0.0.5",
+        "publishedDate": "2025-10-04T01:21:25Z",
+        "sha256sum": "6f842196c4b0fb62c7b5350dbda05b7253d9a9bcb2779c218ef8bb8e047c63db",
+        "foxe": "https://github.com/peek-robotics/foxglove-orientation-panel-2d/releases/download/v0.0.6/peekrobotics.orientation-panel-2d-0.0.6.foxe"
+      }
+    }
+  },
+  {
+    "id": "kabu.wrench-stamped-panel",
+    "name": "WrenchStamped Panel",
+    "publisher": "Ryo Kabutan",
+    "description": "This extension displays the string data of geometry_msgs/WrenchStamped.msg or geometry_msgs/msg/WrenchStamped.msg on the panel.",
+    "homepage": "https://github.com/Ry0/foxglove-wrench-stamped-panel",
+    "license": "MIT",
+    "keywords": ["foxglove", "ros", "wrench"],
+    "thumbnail": null,
+    "namespace": "marketplace",
+    "readme": "https://raw.githubusercontent.com/Ry0/foxglove-wrench-stamped-panel/refs/heads/master/README.md",
+    "changelog": "https://raw.githubusercontent.com/Ry0/foxglove-wrench-stamped-panel/refs/heads/master/CHANGELOG.md",
+    "versions": {
+      "v1.0.0": {
+        "version": "v1.0.0",
+        "publishedDate": "2025-10-04T01:21:25Z",
+        "sha256sum": "bd58c28ddcca54467570dc7e646e209f6e4238f94d116eb3288b4bac9940e832",
+        "foxe": "https://github.com/Ry0/foxglove-wrench-stamped-panel/releases/download/v1.0.0/kabu.wrench-stamped-panel-1.0.0.foxe"
+      }
+    }
+  },
+  {
+    "id": "polymathrobotics.behavior-tree",
+    "name": "Behavior Tree",
+    "publisher": "Polymath Robotics",
+    "description": "Visualization of Behavior Trees",
+    "homepage": "https://github.com/polymathrobotics/foxglove_extensions",
+    "license": "UNLICENSED",
+    "keywords": ["behavior-trees", "ros2"],
+    "thumbnail": null,
+    "namespace": "marketplace",
+    "readme": "https://raw.githubusercontent.com/polymathrobotics/foxglove_extensions/main/behavior-tree/README.md",
+    "changelog": "https://raw.githubusercontent.com/polymathrobotics/foxglove_extensions/main/behavior-tree/CHANGELOG.md",
+    "versions": {
+      "0.1.1": {
+        "version": "0.1.1",
+        "publishedDate": "2025-10-04T01:21:25Z",
+        "sha256sum": "2a84b859d7e6024869faacec52d232534c8476e2c1b52c8e87aca2cc557a59ec",
+        "foxe": "https://github.com/polymathrobotics/foxglove_extensions/releases/download/v1.0.0/polymathrobotics.behavior-tree-0.1.1.foxe"
+      }
+    }
+  },
+  {
+    "id": "polymathrobotics.markdown",
+    "name": "Markdown",
+    "publisher": "Polymath Robotics",
+    "description": "Basic markdown renderer extension",
+    "homepage": "https://github.com/polymathrobotics/foxglove_extensions",
+    "license": "Apache-2.0",
+    "keywords": ["markdown", "documentation", "text"],
+    "thumbnail": null,
+    "namespace": "marketplace",
+    "readme": "https://raw.githubusercontent.com/polymathrobotics/foxglove_extensions/main/markdown/README.md",
+    "changelog": "https://raw.githubusercontent.com/polymathrobotics/foxglove_extensions/main/markdown/CHANGELOG.md",
+    "versions": {
+      "0.1.0": {
+        "version": "0.1.0",
+        "publishedDate": "2025-10-04T01:21:25Z",
+        "sha256sum": "b1dec3773164bc0ed851efbfc4ea3ca22fef0640f9a7ccb9987e63047a340e0d",
+        "foxe": "https://github.com/polymathrobotics/foxglove_extensions/releases/download/v1.0.0/polymathrobotics.markdown-0.1.0.foxe"
+      }
+    }
+  },
+  {
+    "id": "polymathrobotics.ros2-graph",
+    "name": "ROS2 Graph",
+    "publisher": "Polymath Robotics",
+    "description": "Visualization and information on nodes, topics and other ROS2 Graph data. Requires running Graph Monitor (https://github.com/ros-tooling/graph-monitor)",
+    "homepage": "https://github.com/polymathrobotics/foxglove_extensions",
+    "license": "Apache-2.0",
+    "keywords": ["ros2", "graph", "nodes"],
+    "thumbnail": null,
+    "namespace": "marketplace",
+    "readme": "https://raw.githubusercontent.com/polymathrobotics/foxglove_extensions/main/ros2-graph/README.md",
+    "changelog": "https://raw.githubusercontent.com/polymathrobotics/foxglove_extensions/main/ros2-graph/CHANGELOG.md",
+    "versions": {
+      "0.0.3": {
+        "version": "0.0.3",
+        "publishedDate": "2025-10-04T01:21:25Z",
+        "sha256sum": "4ea350105ec00ed381fa9deaf3bf9a1e7d4281a558bfd560d647d5b81d7aeb8c",
+        "foxe": "https://github.com/polymathrobotics/foxglove_extensions/releases/download/v1.0.0/polymathrobotics.ros2-graph-0.0.3.foxe"
+      }
+    }
+  },
+  {
+    "id": "pykainc.LogMessageViewer",
+    "name": "Log Message Viewer Panel",
+    "publisher": "Pyka, Inc.",
+    "description": "Displays any foxglove.Log messages received during the entire displayed timeline. Allows filtering based on severity and contents. Clicking a message jumps the playhead to that timestamp.",
+    "homepage": "https://github.com/flypyka/foxglove-extensions",
+    "license": "MIT",
+    "keywords": ["foxglove", "text", "log"],
+    "thumbnail": null,
+    "namespace": "marketplace",
+    "readme": "https://raw.githubusercontent.com/flypyka/foxglove-extensions/refs/tags/v0.0.1/LogMessageViewer/README.md",
+    "changelog": "https://raw.githubusercontent.com/flypyka/foxglove-extensions/refs/tags/v0.0.1/LogMessageViewer/CHANGELOG.md",
+    "versions": {
+      "v0.0.1": {
+        "version": "v0.0.1",
+        "publishedDate": "2025-10-04T01:21:25Z",
+        "sha256sum": "0373a32186670b0d7603bb0e49476ad89a5aef5eee96df7f86735ad002fa5ca0",
+        "foxe": "https://github.com/flypyka/foxglove-extensions/releases/download/v0.0.1/pykainc.LogMessageViewer-0.0.1.foxe"
+      }
+    }
+  },
+  {
+    "id": "com.matic.MatricDecode",
+    "name": "MatricDecode",
+    "publisher": "Matic Robots",
+    "description": "Extremely fast h.264 decoder based on WebAssembly",
+    "homepage": "https://github.com/MaticianInc/MatricDecode",
+    "license": "MIT",
+    "keywords": ["h264", "video", "decoder"],
+    "thumbnail": null,
+    "namespace": "marketplace",
+    "readme": "https://raw.githubusercontent.com/MaticianInc/MatricDecode/refs/heads/main/README.md",
+    "changelog": "https://raw.githubusercontent.com/MaticianInc/MatricDecode/refs/heads/main/CHANGELOG.md",
+    "versions": {
+      "v0.0.1": {
+        "version": "v0.0.1",
+        "publishedDate": "2025-10-04T01:21:25Z",
+        "sha256sum": "d513332beb5f82011775726dbcd150c18fff6e6f45e07a7d023f81a1583bf335",
+        "foxe": "https://github.com/MaticianInc/MatricDecode/releases/download/publish/maticrobots.MaticDecode-0.0.1.foxe"
+      }
+    }
+  },
+  {
+    "id": "laszloturanyi.bar-display",
+    "name": "Bar Display",
+    "publisher": "laszloturanyi",
+    "description": "Customizable bar display for scalar values with configurable min/max ranges, colors, orientations, and advanced fill behaviors",
+    "homepage": "https://github.com/laszloturanyi/foxglove-bar-display-extension",
+    "license": "MIT",
+    "keywords": ["bar", "display", "scalar", "visualization", "customizable", "ros", "sensor"],
+    "thumbnail": null,
+    "namespace": "marketplace",
+    "readme": "https://raw.githubusercontent.com/laszloturanyi/foxglove-bar-display-extension/main/README.md",
+    "changelog": "https://raw.githubusercontent.com/laszloturanyi/foxglove-bar-display-extension/main/CHANGELOG.md",
+    "versions": {
+      "1.0.0": {
+        "version": "1.0.0",
+        "publishedDate": "2025-10-04T01:21:25Z",
+        "sha256sum": "04b33f47e72dfc7c31fd17bd07c9c41bfd54540141fb8442ab7a0ad9845f3938",
+        "foxe": "https://github.com/laszloturanyi/foxglove-bar-display-extension/releases/download/v1.0.0/laszloturanyi.bar-display-1.0.0.foxe"
+      }
+    }
+  }
+]

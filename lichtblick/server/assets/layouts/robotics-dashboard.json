@@ -1,0 +1,43 @@
+{
+  "configById": {
+    "3D!1": {
+      "layers": {
+        "grid": {
+          "visible": true
+        }
+      },
+      "cameraState": {
+        "perspective": true,
+        "distance": 10,
+        "phi": 45,
+        "thetaOffset": 45
+      }
+    },
+    "Plot!1": {
+      "paths": [
+        {
+          "value": "/diagnostics.data.temperature",
+          "enabled": true,
+          "timestampMethod": "receiveTime"
+        }
+      ],
+      "showLegend": true,
+      "isSynced": true
+    }
+  },
+  "globalVariables": {},
+  "userNodes": {},
+  "playbackConfig": {
+    "speed": 1
+  },
+  "layout": {
+    "first": "3D!1",
+    "second": {
+      "first": "Plot!1",
+      "second": "RawMessages!1",
+      "direction": "column"
+    },
+    "direction": "row",
+    "splitPercentage": 60
+  }
+}

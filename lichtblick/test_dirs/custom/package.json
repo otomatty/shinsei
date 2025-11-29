@@ -1,0 +1,19 @@
+{
+  "name": "test-custom-project",
+  "version": "1.1.0",
+  "description": "Customized project for internal use",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest",
+    "build": "webpack --mode production"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "lodash": "^4.17.21",
+    "axios": "^1.5.0"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "webpack": "^5.88.0"
+  }
+}

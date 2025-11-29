@@ -1,0 +1,16 @@
+{
+  "name": "test-oss-project",
+  "version": "1.0.0",
+  "description": "Original OSS project",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "react": "^18.0.0",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"
+  }
+}
