@@ -101,10 +101,18 @@ function App() {
           </Paper>
 
           <Box sx={{ display: "flex", gap: 2, mt: 2 }}>
-            <a href="https://tauri.app" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://tauri.app"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img src="/tauri.svg" alt="Tauri logo" width="60" />
             </a>
-            <a href="https://react.dev" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://react.dev"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img src="/react.svg" alt="React logo" width="60" />
             </a>
           </Box>
