@@ -35,7 +35,12 @@ function App() {
   const [name, setName] = useState("");
 
   async function greet() {
-    setGreetMsg(await invoke("greet", { name }));
+    try {
+      setGreetMsg(await invoke("greet", { name }));
+    } catch (error) {
+      console.error("Failed to invoke greet:", error);
+      setGreetMsg("Error: Failed to greet");
+    }
   }
 
   return (
@@ -96,10 +101,10 @@ function App() {
           </Paper>
 
           <Box sx={{ display: "flex", gap: 2, mt: 2 }}>
-            <a href="https://tauri.app" target="_blank" rel="noreferrer">
+            <a href="https://tauri.app" target="_blank" rel="noopener noreferrer">
               <img src="/tauri.svg" alt="Tauri logo" width="60" />
             </a>
-            <a href="https://react.dev" target="_blank" rel="noreferrer">
+            <a href="https://react.dev" target="_blank" rel="noopener noreferrer">
               <img src="/react.svg" alt="React logo" width="60" />
             </a>
           </Box>
