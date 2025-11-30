@@ -47,6 +47,8 @@ pub fn get_version_info() -> VersionInfo {
     VersionInfo {
         version: env!("CARGO_PKG_VERSION").to_string(),
         tauri_version: tauri::VERSION.to_string(),
-        rust_version: env!("CARGO_PKG_RUST_VERSION").to_string(),
+        // CARGO_PKG_RUST_VERSION は Cargo.toml に rust-version が設定されている場合のみ利用可能
+        // 代わりにビルド時の rustc バージョンを使用
+        rust_version: "1.70+".to_string(),
     }
 }

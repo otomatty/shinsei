@@ -1,6 +1,6 @@
 // IPCテスト用コンポーネント
 // Issue #5: IPC通信置換の動作確認用
-import { useState, useEffect, useCallback } from "react";
+import { useState, useCallback } from "react";
 import { AppBridge, DesktopBridge, StorageBridge } from "../services";
 import type { AppInfo, OsInfo } from "../services";
 
@@ -161,7 +161,11 @@ export function IPCBridgeTest() {
         "test-store",
         "test-key"
       );
-      if (loadedData && loadedData.message === testData.message) {
+      if (
+        loadedData &&
+        loadedData.message === testData.message &&
+        loadedData.timestamp === testData.timestamp
+      ) {
         updateResult(
           "storage_get",
           "success",
@@ -262,11 +266,6 @@ export function IPCBridgeTest() {
 
     setIsRunning(false);
   }, [addResult, updateResult]);
-
-  // 初回マウント時にテストを自動実行しない（手動実行のみ）
-  useEffect(() => {
-    // 自動実行なし
-  }, []);
 
   // ステータスバッジのスタイル
   const getStatusStyle = (status: TestResult["status"]) => {

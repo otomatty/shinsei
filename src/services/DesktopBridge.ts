@@ -127,7 +127,7 @@ export const DesktopBridge = {
   async maximizeWindow(): Promise<void> {
     const appWindow = getCurrentWindow();
     await appWindow.maximize();
-    this._isMaximized = true;
+    this._isMaximized = await appWindow.isMaximized();
   },
 
   /**
@@ -136,7 +136,7 @@ export const DesktopBridge = {
   async unmaximizeWindow(): Promise<void> {
     const appWindow = getCurrentWindow();
     await appWindow.unmaximize();
-    this._isMaximized = false;
+    this._isMaximized = await appWindow.isMaximized();
   },
 
   /**
@@ -161,11 +161,11 @@ export const DesktopBridge = {
     const appWindow = getCurrentWindow();
     if (await appWindow.isMaximized()) {
       await appWindow.unmaximize();
-      this._isMaximized = false;
     } else {
       await appWindow.maximize();
-      this._isMaximized = true;
     }
+    // 操作後に実際の状態を取得してキャッシュを更新
+    this._isMaximized = await appWindow.isMaximized();
   },
 
   /**

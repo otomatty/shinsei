@@ -126,13 +126,22 @@ export const StorageBridge = {
    * JSON形式のデータを取得するヘルパー
    * @param datastore - データストア名
    * @param key - キー名
+   * @throws JSONパースエラー時にわかりやすいエラーメッセージを投げる
    */
   async getJson<T>(datastore: string, key: string): Promise<T | undefined> {
     const content = await this.getString(datastore, key);
     if (content === undefined) {
       return undefined;
     }
-    return JSON.parse(content) as T;
+    try {
+      return JSON.parse(content) as T;
+    } catch (error) {
+      throw new Error(
+        `Failed to parse JSON for key "${key}" in datastore "${datastore}": ${
+          error instanceof Error ? error.message : String(error)
+        }`
+      );
+    }
   },
 };
 

@@ -1,5 +1,32 @@
-// ローカルファイルストレージコマンド
-// lichtblickのLocalFileStorage相当の機能をTauriで実装
+//! ローカルファイルストレージコマンド
+//!
+//! lichtblickのLocalFileStorage相当の機能をTauriで実装します。
+//!
+//! ## ディレクトリ構造
+//!
+//! データは以下の構造で保存されます:
+//! ```text
+//! {app_data_dir}/
+//!   └── studio-datastores/
+//!       └── {datastore}/
+//!           └── {key}  (ファイル)
+//! ```
+//!
+//! ## 命名規則
+//!
+//! - **datastore名**: 小文字アルファベットとハイフン(`-`)のみ使用可能
+//!   - 例: `user-settings`, `recent-files`
+//! - **key名**: 小文字アルファベットとハイフン(`-`)のみ使用可能
+//!   - 例: `layout`, `panel-config`
+//!
+//! ## 使用例
+//!
+//! ```typescript
+//! // TypeScript側から呼び出し
+//! await StorageBridge.put("user-settings", "layout", data);
+//! const data = await StorageBridge.get("user-settings", "layout");
+//! ```
+
 use serde::Serialize;
 use std::fs;
 use std::path::PathBuf;
@@ -108,11 +135,11 @@ pub fn storage_all(
 
     let mut results: Vec<Vec<u8>> = Vec::new();
 
-    for entry in entries.flatten() {
-        if entry.file_type().map(|t| t.is_file()).unwrap_or(false) {
-            if let Ok(content) = fs::read(entry.path()) {
-                results.push(content);
-            }
+    for entry_res in entries {
+        let entry = entry_res.map_err(StorageError::from)?;
+        if entry.file_type().map_err(StorageError::from)?.is_file() {
+            let content = fs::read(entry.path()).map_err(StorageError::from)?;
+            results.push(content);
         }
     }
 
