@@ -16,11 +16,12 @@ import { createMuiTheme } from "@lichtblick/theme";
 // テストコンポーネント
 import { TauriBridgeTest } from "./components/TauriBridgeTest";
 import { WindowBridgeTest } from "./components/WindowBridgeTest";
+import { IPCBridgeTest } from "./components/IPCBridgeTest";
 
 // Lichtblickのダークテーマを作成
 const darkTheme = createMuiTheme("dark");
 
-type TestView = "none" | "tauri" | "window";
+type TestView = "none" | "tauri" | "window" | "ipc";
 
 function App() {
   const [greetMsg, setGreetMsg] = useState("");
@@ -113,6 +114,17 @@ function App() {
               : "WindowBridge テストを表示"}
           </Button>
 
+          <Button
+            variant="outlined"
+            color="secondary"
+            onClick={() => setTestView(testView === "ipc" ? "none" : "ipc")}
+            sx={{ mt: 1 }}
+          >
+            {testView === "ipc"
+              ? "テストを隠す"
+              : "IPC通信テストを表示 (Issue #5)"}
+          </Button>
+
           {testView === "tauri" && (
             <Paper elevation={3} sx={{ p: 2, width: "100%", mt: 2 }}>
               <TauriBridgeTest />
@@ -122,6 +134,12 @@ function App() {
           {testView === "window" && (
             <Paper elevation={3} sx={{ p: 2, width: "100%", mt: 2 }}>
               <WindowBridgeTest />
+            </Paper>
+          )}
+
+          {testView === "ipc" && (
+            <Paper elevation={3} sx={{ p: 2, width: "100%", mt: 2 }}>
+              <IPCBridgeTest />
             </Paper>
           )}
 
