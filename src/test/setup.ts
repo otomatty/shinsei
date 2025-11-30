@@ -18,6 +18,3 @@ const mockTauriDialog = {
 
 vi.mock("@tauri-apps/plugin-fs", () => mockTauriFs);
 vi.mock("@tauri-apps/plugin-dialog", () => mockTauriDialog);
-
-// グローバルにモックをエクスポート
-export { mockTauriFs, mockTauriDialog };

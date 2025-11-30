@@ -200,5 +200,3 @@ export function TauriBridgeTest() {
     </div>
   );
 }
-
-export default TauriBridgeTest;

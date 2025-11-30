@@ -7,4 +7,3 @@ export {
   type DirectoryEntry,
   type FileInfo,
 } from "./TauriBridge";
-export { default as TauriBridgeDefault } from "./TauriBridge";

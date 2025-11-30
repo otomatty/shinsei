@@ -8,6 +8,7 @@ import {
   stat,
 } from "@tauri-apps/plugin-fs";
 import { open, save } from "@tauri-apps/plugin-dialog";
+import { join } from "path-browserify";
 
 // ファイルフィルターの型定義
 export interface FileFilter {
@@ -131,7 +132,7 @@ export const TauriBridge = {
       name: entry.name,
       isDirectory: entry.isDirectory,
       isFile: entry.isFile,
-      path: `${path}/${entry.name}`,
+      path: join(path, entry.name),
     }));
   },
 
@@ -160,7 +161,10 @@ export const TauriBridge = {
       isFile: info.isFile,
       isSymlink: info.isSymlink,
       readonly: info.readonly,
-      lastModified: info.mtime ? new Date(info.mtime).getTime() : undefined,
+      lastModified:
+        info.mtime && !isNaN(new Date(info.mtime).getTime())
+          ? new Date(info.mtime).getTime()
+          : undefined,
     };
   },
 
@@ -186,5 +190,3 @@ export const TauriBridge = {
     return { path, data };
   },
 };
-
-export default TauriBridge;
