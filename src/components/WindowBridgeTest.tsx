@@ -62,111 +62,53 @@ export function WindowBridgeTest() {
     }
   };
 
+  // テスト実行用ヘルパー関数（重複コード削減）
+  const executeTest = async (
+    name: string,
+    testFn: () => Promise<string>
+  ): Promise<void> => {
+    addResult({ test: name, status: "pending", message: "テスト中..." });
+    try {
+      const message = await testFn();
+      updateResult(name, "success", message);
+    } catch (error) {
+      updateResult(
+        name,
+        "error",
+        error instanceof Error ? error.message : String(error)
+      );
+    }
+  };
+
   const runTests = async () => {
     setResults([]);
     setIsRunning(true);
 
-    // Test 1: ウィンドウタイトル設定
-    addResult({
-      test: "setTitle",
-      status: "pending",
-      message: "テスト中...",
-    });
-    try {
+    await executeTest("setTitle", async () => {
       await WindowBridge.setTitle("Lichtblick - Test Title");
       const title = WindowBridge.getTitle();
-      updateResult("setTitle", "success", `タイトル設定成功: "${title}"`);
-    } catch (error) {
-      updateResult(
-        "setTitle",
-        "error",
-        error instanceof Error ? error.message : String(error)
-      );
-    }
-
-    // Test 2: ウィンドウサイズ取得
-    addResult({
-      test: "getSize",
-      status: "pending",
-      message: "テスト中...",
+      return `タイトル設定成功: "${title}"`;
     });
-    try {
+
+    await executeTest("getSize", async () => {
       const size = await WindowBridge.getSize();
-      updateResult(
-        "getSize",
-        "success",
-        `現在のサイズ: ${size.width} x ${size.height}`
-      );
-    } catch (error) {
-      updateResult(
-        "getSize",
-        "error",
-        error instanceof Error ? error.message : String(error)
-      );
-    }
-
-    // Test 3: ウィンドウ位置取得
-    addResult({
-      test: "getPosition",
-      status: "pending",
-      message: "テスト中...",
+      return `現在のサイズ: ${size.width} x ${size.height}`;
     });
-    try {
+
+    await executeTest("getPosition", async () => {
       const position = await WindowBridge.getPosition();
-      updateResult(
-        "getPosition",
-        "success",
-        `現在の位置: (${position.x}, ${position.y})`
-      );
-    } catch (error) {
-      updateResult(
-        "getPosition",
-        "error",
-        error instanceof Error ? error.message : String(error)
-      );
-    }
-
-    // Test 4: フルスクリーン状態取得
-    addResult({
-      test: "isFullscreen",
-      status: "pending",
-      message: "テスト中...",
+      return `現在の位置: (${position.x}, ${position.y})`;
     });
-    try {
+
+    await executeTest("isFullscreen", async () => {
       const isFullscreen = await WindowBridge.isFullscreen();
-      updateResult(
-        "isFullscreen",
-        "success",
-        `フルスクリーン状態: ${isFullscreen ? "ON" : "OFF"}`
-      );
-    } catch (error) {
-      updateResult(
-        "isFullscreen",
-        "error",
-        error instanceof Error ? error.message : String(error)
-      );
-    }
-
-    // Test 5: 最大化状態取得
-    addResult({
-      test: "isMaximized",
-      status: "pending",
-      message: "テスト中...",
+      return `フルスクリーン状態: ${isFullscreen ? "ON" : "OFF"}`;
     });
-    try {
+
+    await executeTest("isMaximized", async () => {
       const isMaximized = await WindowBridge.isMaximized();
-      updateResult(
-        "isMaximized",
-        "success",
-        `最大化状態: ${isMaximized ? "ON" : "OFF"}`
-      );
-    } catch (error) {
-      updateResult(
-        "isMaximized",
-        "error",
-        error instanceof Error ? error.message : String(error)
-      );
-    }
+      return `最大化状態: ${isMaximized ? "ON" : "OFF"}`;
+    });
 
     await refreshWindowInfo();
     setIsRunning(false);

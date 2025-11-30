@@ -147,6 +147,10 @@ describe("WindowBridge", () => {
       await WindowBridge.setSize(1400, 900);
 
       expect(mockWindow.setSize).toHaveBeenCalled();
+      // 引数の検証: LogicalSizeオブジェクトが正しく作成されていることを確認
+      const callArg = mockWindow.setSize.mock.calls[0][0];
+      expect(callArg.width).toBe(1400);
+      expect(callArg.height).toBe(900);
     });
   });
 
@@ -167,6 +171,10 @@ describe("WindowBridge", () => {
       await WindowBridge.setPosition(100, 200);
 
       expect(mockWindow.setPosition).toHaveBeenCalled();
+      // 引数の検証: LogicalPositionオブジェクトが正しく作成されていることを確認
+      const callArg = mockWindow.setPosition.mock.calls[0][0];
+      expect(callArg.x).toBe(100);
+      expect(callArg.y).toBe(200);
     });
   });
 

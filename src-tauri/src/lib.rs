@@ -85,68 +85,31 @@ pub fn run() {
             Ok(())
         })
         .on_menu_event(|app, event| {
-            match event.id().as_ref() {
-                "open_file" => {
-                    println!("Open File clicked");
-                    // フロントエンドにイベントを送信
-                    if let Some(window) = app.get_webview_window("main") {
-                        let _ = window.emit("menu-event", "open_file");
-                    }
-                }
-                "open_folder" => {
-                    println!("Open Folder clicked");
-                    if let Some(window) = app.get_webview_window("main") {
-                        let _ = window.emit("menu-event", "open_folder");
-                    }
-                }
-                "save" => {
-                    println!("Save clicked");
-                    if let Some(window) = app.get_webview_window("main") {
-                        let _ = window.emit("menu-event", "save");
-                    }
-                }
-                "save_as" => {
-                    println!("Save As clicked");
-                    if let Some(window) = app.get_webview_window("main") {
-                        let _ = window.emit("menu-event", "save_as");
-                    }
-                }
+            let event_id = event.id().as_ref();
+            // TODO: println!をlogクレートなどの適切なロガーに置き換えることを検討してください
+            println!("Menu event triggered: {}", event_id);
+
+            match event_id {
+                // ウィンドウを閉じる（Rust側で直接処理）
                 "close" => {
-                    println!("Close Window clicked");
                     if let Some(window) = app.get_webview_window("main") {
-                        let _ = window.close();
-                    }
-                }
-                "toggle_fullscreen" => {
-                    println!("Toggle Fullscreen clicked");
-                    if let Some(window) = app.get_webview_window("main") {
-                        if let Ok(is_fullscreen) = window.is_fullscreen() {
-                            let _ = window.set_fullscreen(!is_fullscreen);
+                        if let Err(e) = window.close() {
+                            println!("Failed to close window: {}", e);
                         }
                     }
                 }
-                "zoom_in" => {
-                    if let Some(window) = app.get_webview_window("main") {
-                        let _ = window.emit("menu-event", "zoom_in");
-                    }
-                }
-                "zoom_out" => {
-                    if let Some(window) = app.get_webview_window("main") {
-                        let _ = window.emit("menu-event", "zoom_out");
-                    }
-                }
-                "reset_zoom" => {
-                    if let Some(window) = app.get_webview_window("main") {
-                        let _ = window.emit("menu-event", "reset_zoom");
-                    }
-                }
+                // ドキュメントを外部ブラウザで開く
                 "documentation" => {
                     let _ = tauri_plugin_opener::OpenerExt::opener(app)
                         .open_url("https://github.com/lichtblick-suite/lichtblick", None::<&str>);
                 }
-                "about" => {
+                // フロントエンドに転送するイベント
+                // toggle_fullscreen も含め、フロントエンドで一貫して処理
+                "open_file" | "open_folder" | "save" | "save_as" | "toggle_fullscreen" | "zoom_in" | "zoom_out" | "reset_zoom" | "about" => {
                     if let Some(window) = app.get_webview_window("main") {
-                        let _ = window.emit("menu-event", "about");
+                        if let Err(e) = window.emit("menu-event", event_id) {
+                            println!("Failed to emit event '{}': {}", event_id, e);
+                        }
                     }
                 }
                 _ => {}
