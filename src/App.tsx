@@ -13,12 +13,16 @@ import {
 // Lichtblickのテーマを使用
 import { createMuiTheme } from "@lichtblick/theme";
 
+// TauriBridgeテストコンポーネント
+import TauriBridgeTest from "./components/TauriBridgeTest";
+
 // Lichtblickのダークテーマを作成
 const darkTheme = createMuiTheme("dark");
 
 function App() {
   const [greetMsg, setGreetMsg] = useState("");
   const [name, setName] = useState("");
+  const [showTest, setShowTest] = useState(false);
 
   async function greet() {
     try {
@@ -85,6 +89,20 @@ function App() {
               </Typography>
             )}
           </Paper>
+
+          <Button
+            variant="outlined"
+            onClick={() => setShowTest(!showTest)}
+            sx={{ mt: 2 }}
+          >
+            {showTest ? "テストを隠す" : "TauriBridge テストを表示"}
+          </Button>
+
+          {showTest && (
+            <Paper elevation={3} sx={{ p: 2, width: "100%", mt: 2 }}>
+              <TauriBridgeTest />
+            </Paper>
+          )}
 
           <Box sx={{ display: "flex", gap: 2, mt: 2 }}>
             <a
