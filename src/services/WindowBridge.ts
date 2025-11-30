@@ -171,6 +171,29 @@ export const WindowBridge = {
   async openExternal(url: string): Promise<void> {
     await open(url);
   },
+
+  /**
+   * フルスクリーン状態の変更を監視
+   * @param callback フルスクリーン状態が変更されたときに呼ばれるコールバック
+   * @returns 監視を解除する関数
+   */
+  async onFullscreenChange(
+    callback: (isFullscreen: boolean) => void
+  ): Promise<() => void> {
+    const appWindow = getCurrentWindow();
+    // TauriのWindow APIでリサイズイベントを監視し、フルスクリーン状態をチェック
+    let lastFullscreenState = await appWindow.isFullscreen();
+
+    const unlisten = await appWindow.onResized(async () => {
+      const currentFullscreen = await appWindow.isFullscreen();
+      if (currentFullscreen !== lastFullscreenState) {
+        lastFullscreenState = currentFullscreen;
+        callback(currentFullscreen);
+      }
+    });
+
+    return unlisten;
+  },
 };
 
 export default WindowBridge;
