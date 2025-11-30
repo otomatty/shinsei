@@ -4,6 +4,9 @@ use tauri::{
     Emitter, Manager,
 };
 
+// コマンドモジュール
+mod commands;
+
 #[tauri::command]
 fn greet(name: &str) -> String {
     format!("Hello, {}! You've been greeted from Rust!", name)
@@ -115,7 +118,32 @@ pub fn run() {
                 _ => {}
             }
         })
-        .invoke_handler(tauri::generate_handler![greet])
+        .invoke_handler(tauri::generate_handler![
+            // 基本コマンド
+            greet,
+            // アプリ情報コマンド
+            commands::get_app_info,
+            commands::get_version_info,
+            // システムコマンド
+            commands::get_home_path,
+            commands::get_user_data_path,
+            commands::get_config_path,
+            commands::get_cache_path,
+            commands::get_log_path,
+            commands::get_env_var,
+            commands::get_hostname,
+            commands::get_pid,
+            commands::get_os_info,
+            // ストレージコマンド
+            commands::storage_list,
+            commands::storage_all,
+            commands::storage_get,
+            commands::storage_get_string,
+            commands::storage_put,
+            commands::storage_put_string,
+            commands::storage_delete,
+            commands::storage_exists,
+        ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
