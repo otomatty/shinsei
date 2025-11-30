@@ -13,16 +13,19 @@ import {
 // Lichtblickのテーマを使用
 import { createMuiTheme } from "@lichtblick/theme";
 
-// TauriBridgeテストコンポーネント
-import TauriBridgeTest from "./components/TauriBridgeTest";
+// テストコンポーネント
+import { TauriBridgeTest } from "./components/TauriBridgeTest";
+import { WindowBridgeTest } from "./components/WindowBridgeTest";
 
 // Lichtblickのダークテーマを作成
 const darkTheme = createMuiTheme("dark");
 
+type TestView = "none" | "tauri" | "window";
+
 function App() {
   const [greetMsg, setGreetMsg] = useState("");
   const [name, setName] = useState("");
-  const [showTest, setShowTest] = useState(false);
+  const [testView, setTestView] = useState<TestView>("none");
 
   async function greet() {
     try {
@@ -92,15 +95,33 @@ function App() {
 
           <Button
             variant="outlined"
-            onClick={() => setShowTest(!showTest)}
+            onClick={() => setTestView(testView === "tauri" ? "none" : "tauri")}
             sx={{ mt: 2 }}
           >
-            {showTest ? "テストを隠す" : "TauriBridge テストを表示"}
+            {testView === "tauri" ? "テストを隠す" : "TauriBridge テストを表示"}
           </Button>
 
-          {showTest && (
+          <Button
+            variant="outlined"
+            onClick={() =>
+              setTestView(testView === "window" ? "none" : "window")
+            }
+            sx={{ mt: 1 }}
+          >
+            {testView === "window"
+              ? "テストを隠す"
+              : "WindowBridge テストを表示"}
+          </Button>
+
+          {testView === "tauri" && (
             <Paper elevation={3} sx={{ p: 2, width: "100%", mt: 2 }}>
               <TauriBridgeTest />
+            </Paper>
+          )}
+
+          {testView === "window" && (
+            <Paper elevation={3} sx={{ p: 2, width: "100%", mt: 2 }}>
+              <WindowBridgeTest />
             </Paper>
           )}
 
